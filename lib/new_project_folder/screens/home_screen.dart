@@ -30,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
       PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: AppBar(
+            
             flexibleSpace: Container(
               decoration:
                   const BoxDecoration(gradient: GlobalVariables.appBarGradient),

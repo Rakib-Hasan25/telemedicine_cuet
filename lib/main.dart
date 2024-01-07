@@ -5,6 +5,7 @@ import 'package:flutter_amazon_clone/features/auth/services/auth_service.dart';
 import 'package:flutter_amazon_clone/new_project_folder/provider/category_search_provider.dart';
 import 'package:flutter_amazon_clone/new_project_folder/provider/doctor_search_provider.dart';
 import 'package:flutter_amazon_clone/new_project_folder/screens/home_screen.dart';
+import 'package:flutter_amazon_clone/new_project_folder/screens/main_bottom_nav_screen.dart';
 
 import 'package:flutter_amazon_clone/router.dart';
 import 'package:provider/provider.dart';
@@ -51,7 +52,7 @@ class _MyAppState extends State<MyApp> {
           appBarTheme: const AppBarTheme(
               elevation: 0, iconTheme: IconThemeData(color: Colors.black))),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home:HomeScreen()
+      home:MainBottomNavScreen()
       
       //  Provider.of<UserProvider>(context).user.token.isNotEmpty
       // ?(Provider.of<UserProvider>(context).user.type =='user'?const BottomBar():const AdminBottomBar()): 

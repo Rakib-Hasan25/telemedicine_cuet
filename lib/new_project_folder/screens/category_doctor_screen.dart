@@ -138,55 +138,7 @@ class _DoctorCategoryScreenState extends State<DoctorCategoryScreen> {
 
        
 
-      // Column(
-      //   children: [
-      //     Container(
-      //       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-      //       alignment: Alignment.topLeft,
-      //       child: Text(
-      //         "${widget.category}",
-      //         style: const TextStyle(fontSize: 20),
-      //       ),
-      //     ),
-      //     SizedBox(
-      //       height: 170,
-      //       child: GridView.builder(
-      //           itemCount: productList!.length,
-      //           scrollDirection: Axis.horizontal,
-      //           padding: const EdgeInsets.only(left: 15),
-      //           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-      //               crossAxisCount: 1,
-      //               childAspectRatio: 1.4,
-      //               mainAxisSpacing: 10),
-      //           itemBuilder: (context, index) {
-      //             final product = productList![index];
-      //             return Column(
-      //               children: [
-      //                 SizedBox(
-      //                   height: 130,
-      //                   child: DecoratedBox(decoration: BoxDecoration(border: Border.all(color:Colors.black12,width: 0.5)),
-                        
-      //                   child: Padding(padding: EdgeInsets.all(10),
-      //                   child: Image.network(product.images[0])
-      //                   ),
-      //                   ),
-      //                 ),
-      //                 Container(
-      //                   alignment: Alignment.topLeft,
-      //                   padding: EdgeInsets.only(left: 10),
-      //                   child: Text(
-      //                     product.name,
-      //                     maxLines: 1,
-      //                     overflow: TextOverflow.ellipsis,
-      //                     style: const TextStyle(fontSize: 15),
-      //                   ),
-      //                 )
-      //               ],
-      //             );
-      //           }),
-      //     )
-      //   ],
-      // ),
+     
     );
   }
 }

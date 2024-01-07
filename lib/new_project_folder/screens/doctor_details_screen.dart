@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_amazon_clone/new_project_folder/screens/Appointment_taking_screen.dart';
 
 class DoctorDetailsScreen extends StatefulWidget {
   final String name;
@@ -8,7 +9,14 @@ class DoctorDetailsScreen extends StatefulWidget {
   final String designation;
   final String workplace;
 
-  const DoctorDetailsScreen({super.key, required this.name, required this.picture, required this.degree, required this.speciality, required this.designation,required this.workplace});
+  const DoctorDetailsScreen(
+      {super.key,
+      required this.name,
+      required this.picture,
+      required this.degree,
+      required this.speciality,
+      required this.designation,
+      required this.workplace});
   @override
   State<DoctorDetailsScreen> createState() => _DoctorDetailsScreenState();
 }
@@ -32,21 +40,22 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
               child: CircleAvatar(
                 radius: 50,
                 backgroundImage: NetworkImage(
-                    widget.picture,), // Replace with actual image
+                  widget.picture,
+                ), // Replace with actual image
               ),
             ),
             SizedBox(height: 20),
             Text(widget.name,
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-             SizedBox(height: 10),
+            SizedBox(height: 10),
             Text(widget.degree,
                 style: TextStyle(fontSize: 18, color: Colors.grey)),
-             SizedBox(height: 10),
+            SizedBox(height: 10),
 
             Align(
-              alignment: Alignment.center,
-              child: Text(widget.speciality, style: TextStyle(fontSize: 20))),
-             SizedBox(height: 20),
+                alignment: Alignment.center,
+                child: Text(widget.speciality, style: TextStyle(fontSize: 20))),
+            SizedBox(height: 20),
 
             Text(widget.designation,
                 style: TextStyle(fontSize: 18, color: Colors.grey)),
@@ -62,8 +71,11 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
             ElevatedButton(
               onPressed: () {
                 // Add booking appointment logic
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => AppointmentTakingScreen()));
               },
-              child: Text('Book Appointment',style:TextStyle( color:Colors.white)),
+              child: Text('Book Appointment',
+                  style: TextStyle(color: Colors.white)),
               style: ElevatedButton.styleFrom(
                 primary: Colors.blue,
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
