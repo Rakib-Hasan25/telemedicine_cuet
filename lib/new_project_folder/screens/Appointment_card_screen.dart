@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_amazon_clone/new_project_folder/screens/chat_screen.dart';
 
 import '../../constants/global_variables.dart';
 
@@ -48,6 +49,8 @@ class _AppointmentCardScreenState extends State<AppointmentCardScreen> {
                     // these icon will be available in specific time , give your logic 
                     InkWell(
                       onTap: (){
+                         Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ChatScreen()));
 
                       },
                       child: Icon(Icons.message)
