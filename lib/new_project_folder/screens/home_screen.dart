@@ -1,7 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_amazon_clone/constants/global_variables.dart';
-import 'package:flutter_amazon_clone/features/auth/widgets/top_catagories.dart';
+import 'package:flutter_amazon_clone/new_project_folder/provider/category_search_provider.dart';
+import 'package:flutter_amazon_clone/new_project_folder/widgets/doctor_category.dart';
 import 'package:flutter_amazon_clone/search/screens/search_screen.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/home';
@@ -22,14 +25,18 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
+      appBar: 
+      
+      PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: AppBar(
             flexibleSpace: Container(
               decoration:
                   const BoxDecoration(gradient: GlobalVariables.appBarGradient),
             ),
-            title: Row(children: [
+            title: 
+            Row(
+              children: [
               Expanded(
                 child: Container(
                   height: 42,
@@ -38,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(7),
                     elevation: 1,
                     child: TextFormField(
-                      onFieldSubmitted: navigateToSearchScreen,
+                      onChanged: (value) =>  Provider.of<CategorySearchProvider>(context, listen: false).searchItems(value),
                       decoration: InputDecoration(
                           prefixIcon: InkWell(
                             onTap: () {},
@@ -67,34 +74,29 @@ class _HomeScreenState extends State<HomeScreen> {
                           hintStyle: const TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 17,
-                          )),
+                          )
+                          ),
                     ),
                   ),
                 ),
               ),
-              Container(
-                color: Colors.transparent,
-                height: 48,
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                child: const Icon(
-                  Icons.mic,
-                  color: Colors.black,
-                ),
-              )
-            ]),
-          )),
+             
+            ],
+
+            ),
+          )
+          ),
+          
       body: SingleChildScrollView(
         child: Column(children: [
-          // AddressBox(),
           SizedBox(
             height: 5,
           ),
-          TopCatagories(),
+          AllDoctorCategory(),
           SizedBox(
             height: 5,
           ),
-          // CarouselImage(),
-            // DealOfDay()
+          //
         ]),
       ),
     );

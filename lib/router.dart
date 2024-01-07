@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_amazon_clone/features/admin/screens/add_product_screen.dart';
 import 'package:flutter_amazon_clone/features/auth/screens/auth_screens.dart';
 import 'package:flutter_amazon_clone/features/auth/screens/bottom_bar.dart';
-import 'package:flutter_amazon_clone/features/home/screens/category_screen.dart';
-import 'package:flutter_amazon_clone/features/home/screens/home_screen.dart';
 import 'package:flutter_amazon_clone/features/product_details/screens/product_details_screens.dart';
 import 'package:flutter_amazon_clone/models/product.dart';
+import 'package:flutter_amazon_clone/new_project_folder/screens/category_doctor_screen.dart';
+import 'package:flutter_amazon_clone/new_project_folder/screens/home_screen.dart';
 import 'package:flutter_amazon_clone/search/screens/search_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -26,11 +26,11 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => const AddProductScreen(),
       );
-      case CategoryDealsScreens.routeName:
+      case DoctorCategoryScreen.routeName:
       var category =routeSettings.arguments as String;
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) =>  CategoryDealsScreens(
+        builder: (_) =>  DoctorCategoryScreen(
           category: category,
         ),
       );
